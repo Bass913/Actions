@@ -10,9 +10,9 @@ jobs:
     strategy:
       matrix:
         nginx-versions:
-          - nginx:1.21-perl
-          - nginx:1.20.2
-          - nginx:stable-perl
+          - '1.21-perl'
+          - '1.20.2'
+          - 'stable-perl'
         
     name: Test that the NGINX's Docker image is working properly
     runs-on: ubuntu:20.04
