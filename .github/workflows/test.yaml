@@ -13,7 +13,7 @@ jobs:
           - "1.20.2"
           - "stable-perl"
         
-    name: Test that the NGINX's Docker image is working properly
+    name: Test that the NGINX's Docker image is working pRunroperly
     runs-on: ubuntu-20.04
 
     steps:
