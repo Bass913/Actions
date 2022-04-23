@@ -4,6 +4,7 @@
 
 name: launch-nginx
 on: [push]
+
 jobs:
   launch:
     strategy:
