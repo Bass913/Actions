@@ -19,9 +19,9 @@ jobs:
 
     steps:
       - name: Pull
-        run:  docker pull nginx:${{matrix.nginx-versions}}
+        run:  docker pull nginx:${{ matrix.nginx-versions }}
       - name: Run
-        run:  docker container run --detach --publish 80:80 --name ${{matrix.nginx-versions}} nginx
+        run:  docker container run --detach --publish 80:80 --name ${{ matrix.nginx-versions }} nginx
       - name: HTTP Request
         run: curl http://localhost
       - name: Stop
