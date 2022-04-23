@@ -1,26 +1,26 @@
 # 1. Lancer un conteneur NGINX
 # 2. Vérifier que le serveur répond bien sur localhost
 # 3. Stopper le conteneur
-
 name: launch-nginx
 on: [push]
+
 jobs:
   launch:
     strategy:
-    matrix:
-      nginx-versions:
-        - nginx:1.21-perl
-        - nginx:1.20.2
-        - nginx:stable-perl
+      matrix:
+        nginx-versions:
+          - "1.21-perl"
+          - "1.20.2"
+          - "stable-perl"
         
-  name: Test that the NGINX's Docker image is working properly
-    runs-on: ubuntu:20.04
+
+    runs-on: ubuntu-20.04
 
     steps:
       - name: Pull
-        run:  docker pull ${{nginx-versions}}
-      - name: Run
-        run:  docker container run --detach --publish 80:80 --name nginx ${{nginx-versions}}
+        run:  docker pull nginx:${{ matrix.nginx-versions }}
+      - name: Runname: Test that the NGINX's Docker image is working properly
+        run:  docker container run --detach --publish 80:80 --name ${{ matrix.nginx-versions }} nginx
       - name: HTTP Request
         run: curl http://localhost
       - name: Stop
