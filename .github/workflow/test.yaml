@@ -1,7 +1,6 @@
 # 1. Lancer un conteneur NGINX
 # 2. Vérifier que le serveur répond bien sur localhost
 # 3. Stopper le conteneur
-
 name: launch-nginx
 on: [push]
 
