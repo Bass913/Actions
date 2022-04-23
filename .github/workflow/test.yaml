@@ -15,7 +15,7 @@ jobs:
           - 'stable-perl'
         
     name: Test that the NGINX's Docker image is working properly
-    runs-on: ubuntu:20.04
+    runs-on: ubuntu-20.04
 
     steps:
       - name: Pull
