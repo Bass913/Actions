@@ -10,17 +10,17 @@ jobs:
     strategy:
       matrix:
         nginx-versions:
-          - '1.21-perl'
-          - '1.20.2'
-          - 'stable-perl'
+          - "1.21-perl"
+          - "1.20.2"
+          - "stable-perl"
         
-    name: Test that the NGINX's Docker image is working properly
+
     runs-on: ubuntu-20.04
 
     steps:
       - name: Pull
         run:  docker pull nginx:${{ matrix.nginx-versions }}
-      - name: Run
+      - name: Runname: Test that the NGINX's Docker image is working properly
         run:  docker container run --detach --publish 80:80 --name ${{ matrix.nginx-versions }} nginx
       - name: HTTP Request
         run: curl http://localhost
